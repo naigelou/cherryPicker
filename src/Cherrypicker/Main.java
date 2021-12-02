@@ -17,7 +17,33 @@ public class Main extends Script{
     public void onMessage(Message message) throws java.lang.InterruptedException {
         String txt = message.getMessage().toLowerCase();
         if (txt.contains("there are no berries on this bush at the moment.")) {
-            log("MENIS LIKKUU JOS OSAIS KOODATA.");
+            if (!puska1.contains(myPlayer())) {
+                if (getWalking().webWalk(puska1)) {
+                    new ConditionalSleep(1800, 6000) {
+                        @Override
+                        public boolean condition() throws InterruptedException {
+                            return false;
+                        }
+                    }.sleep();
+                }
+            } else {
+                RS2Object bush = getObjects().closest("Cadava bush");
+                if (bush != null) {
+                    if (!myPlayer().isAnimating()) {
+                        bush.interact("Pick-from");
+                    }
+
+                    getMouse().moveOutsideScreen();
+
+                    sleep(random(2000, 4000));
+
+
+
+
+                }
+
+            }
+
         }
     }
 
