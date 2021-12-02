@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Cherrypicker">
+    <output-path>$USER_HOME$/OSBot/Scripts</output-path>
+    <root id="archive" name="Cherrypicker.jar">
+      <element id="module-output" name="cherrypicker" />
+    </root>
+  </artifact>
+</component>
